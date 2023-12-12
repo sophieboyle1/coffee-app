@@ -1,8 +1,8 @@
 import Card from 'react-bootstrap/Card';
 
-function CoffeeItem(props) {
+function CoffeeItems(props) {
     // Destructure props for cleaner access to the coffee object's properties
-    const { name, description, imageUrl, price, origin, roast } = props.myCoffee;
+    const { name, description, imageUrl, origin, roast } = props.myCoffee;
 
     return (
         <div>
@@ -10,10 +10,10 @@ function CoffeeItem(props) {
                 <Card.Header>{name}</Card.Header>
                 <Card.Body>
                     <blockquote className="blockquote mb-0">
-                        <img src={imageUrl} alt={`A delicious cup of ${name}`} />
-                        <footer>
-                            Price: ${price} <br />
-                            Origin: {origin.join(', ')} <br />
+                        <img src={imageUrl} style={{ width: '150px', height: '150px' }} alt={`A delicious cup of ${name}`} />
+                        <footer className="blockquote-footer">
+                            <p>{description}</p> {/* Make sure to render the description */}
+                            Origin: {origin} <br />
                             Roast: {roast}
                         </footer>
                     </blockquote>
@@ -23,4 +23,6 @@ function CoffeeItem(props) {
     );
 }
 
-export default CoffeeItem;
+export default CoffeeItems;
+
+

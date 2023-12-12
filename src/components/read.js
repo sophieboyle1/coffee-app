@@ -1,44 +1,27 @@
-import React from "react";
+import axios from "axios";
 import Coffees from './coffees';
+import { useEffect, useState } from "react";
 
 function Read() {
-    const data = [
-        {
-            "name": "Espresso",
-            "id": "coffee1",
-            "description": "A full-flavored, concentrated form of coffee that is served in shots.",
-            "imageUrl": "https://link-to-espresso-image.jpg",
-            "price": "2.99",
-            "origin": ["Ethiopia"],
-            "roast": "Dark"
-        },
-        {
-            "name": "Latte",
-            "id": "coffee2",
-            "description": "A coffee drink made with espresso and steamed milk.",
-            "imageUrl": "https://link-to-latte-image.jpg",
-            "price": "3.99",
-            "origin": ["Colombia"],
-            "roast": "Medium"
-        },
-        {
-            "name": "Cappuccino",
-            "id": "coffee3",
-            "description": "An espresso-based coffee drink that is traditionally prepared with steamed milk foam.",
-            "imageUrl": "https://link-to-cappuccino-image.jpg",
-            "price": "3.49",
-            "origin": ["Brazil"],
-            "roast": "Medium"
-        }
-    ];
+    const [coffees, setCoffees] = useState([]);
+
+    useEffect(() => {
+        // Update my URL when i have it
+        axios.get('https://jsonblob.com/api/jsonblob/1184144214337642496')
+        .then((response) => {
+            setCoffees(response.data.coffees);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+    }, []);
 
     return (
         <div>
-            <h2>Hello from Read Component!</h2>
-            <Coffees myCoffees={data}></Coffees>
+            <h2>Hello from my Read Component</h2>
+            <Coffees myCoffees={coffees}></Coffees>
         </div>
     );
-
 }
 
 export default Read;
