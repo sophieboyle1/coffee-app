@@ -3,13 +3,12 @@ import Coffees from './coffees';
 import { useEffect, useState } from "react";
 
 function Read() {
-    const [coffees, setCoffees] = useState([]);
+    const [data, setData] = useState([]);
 
     useEffect(() => {
-        // Update my URL when i have it
-        axios.get('https://jsonblob.com/api/jsonblob/1184144214337642496')
+        axios.get('http://localhost:4000/api/coffees')
         .then((response) => {
-            setCoffees(response.data.coffees);
+            setData(response.data.myCoffees);
         })
         .catch((error) => {
             console.log(error);
@@ -18,8 +17,8 @@ function Read() {
 
     return (
         <div>
-            <h2>Hello from my Read Component</h2>
-            <Coffees myCoffees={coffees}></Coffees>
+            <h2>Favourite Coffees</h2>
+            <Coffees myCoffees={data}></Coffees>
         </div>
     );
 }
