@@ -4,12 +4,12 @@ const port = 4000;
 const cors = require('cors');
 
 app.use(cors());
-app.use(function(req, res, next) {
-res.header("Access-Control-Allow-Origin", "*");
-res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-res.header("Access-Control-Allow-Headers",
-"Origin, X-Requested-With, Content-Type, Accept");
-next();
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+    res.header("Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept");
+    next();
 });
 
 const bodyParser = require("body-parser");
@@ -18,9 +18,46 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.post('/api/coffee', (req,res)=>{
+// getting-started.js
+const mongoose = require('mongoose');
+
+main().catch(err => console.log(err));
+
+async function main() {
+    await mongoose.connect('mongodb+srv://admin:admin@cluster0.o3nriae.mongodb.net/');
+
+    // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
+}
+
+const coffeeSchema = new mongoose.Schema({
+    name: String,
+    imageURL: String,
+    description: String,
+    origin: String,
+    roast: String
+})
+
+const coffeeModel = mongoose.model('my_coffees', coffeeSchema);
+
+app.put('/api/coffee/:id', async(req, res)=>{
+    console.log("Update: "+req.params.id);
+  
+    let coffee = await coffeeModel.findByIdAndUpdate(req.params.id, req.body, {new:true});
+    res.send(coffee);
+  })
+
+app.post('/api/coffee', (req, res) => {
     console.log(req.body);
-    res.send("coffee Created")
+
+    coffeeModel.create({
+        name: req.body.name,
+        imageURL: req.body.imageURL,
+        description: req.body.description,
+        origin: req.body.origin,
+        roast: req.body.roast
+    })
+        .then(() => { res.send("coffee Created") })
+        .catch(() => { res.send("coffee NOT Created") });
 })
 
 // A simple GET route for the root of the server
@@ -28,40 +65,19 @@ app.get('/', (req, res) => {
     res.send('Welcome to the Coffee API!');
 });
 
-// A GET route to send back an array of coffees
-app.get('/api/coffees', (req, res) => {
-    const coffees = [
-        {
-            "id": "coffee1",
-            "name": "Espresso",
-            "description": "A full-flavored, concentrated form of coffee that is served in shots.",
-            "imageUrl": "https://www.thespruceeats.com/thmb/HJrjMfXdLGHbgMhnM0fMkDx9XPQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/what-is-espresso-765702-hero-03_cropped-ffbc0c7cf45a46ff846843040c8f370c.jpg",
-            "origin": "Italy",
-            "roast": "Dark"
-        },
-        {
-            "id": "coffee2",
-            "name": "Latte",
-            "description": "A coffee drink made with espresso and steamed milk.",
-            "imageUrl": "https://www.forkinthekitchen.com/wp-content/uploads/2022/06/220518.homemade.latte_.updated-6483.jpg",
-            "origin": "Italy",
-            "roast": "Medium"
-        },
-        {
-            "id": "coffee3",
-            "name": "Cappuccino",
-            "description": "An espresso-based coffee drink traditionally prepared with steamed milk foam.",
-            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Cappuccino_at_Sightglass_Coffee.jpg/1200px-Cappuccino_at_Sightglass_Coffee.jpg",
-            "origin": "Italy",
-            "roast": "Medium"
-        }
-    ];
+app.get('/api/coffees', async (req, res) => {
 
-    res.json({
-        myCoffees: coffees,
-        "coffee data works":"Hello coffees"
-    }) 
-});
+    let coffees = await coffeeModel.find({});
+
+    console.log(coffees);
+    res.json({ myCoffees: coffees });
+})
+
+app.get('/api/coffee/:id',async (req,res)=>{
+    console.log(req.params.id);
+    let coffee = await coffeeModel.findById({_id:req.params.id})
+    res.send(coffee);
+    })
 
 app.listen(port, () => {
     console.log(`Coffee API listening on port ${port}`);

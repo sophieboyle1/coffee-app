@@ -1,4 +1,5 @@
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 
 function CoffeeItems(props) {
     // Destructure props for cleaner access to the coffee object's properties
@@ -18,6 +19,7 @@ function CoffeeItems(props) {
                         </footer>
                     </blockquote>
                 </Card.Body>
+                <Link to={'/edit/'+props.myCoffee._id} className='btn btn-primary'>Edit</Link>
             </Card>
         </div>
     );
