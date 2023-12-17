@@ -110,6 +110,38 @@ h2::after {
   background-color: #fafafa;
   color: #8f6f4d;
 }
+/* coffee cards*/
+
+.custom-card {
+  width: 100%; 
+  max-width: 350px; 
+}
+
+.custom-section-2 {
+  padding: 60px;
+  background-color: rgba(143, 111, 77, 0.3);
+}
+
+.btn-light.float-right {
+  background-color: #8f6f4d;
+  color: #212529; /* Bootstrap's default color for btn-light */
+  /* Additional styling to match the 'Add Coffee' button */
+}
+
+.card {
+  border-radius: 0 !important;
+}
+
+.card-header, .card-footer {
+  background-color: white!important;
+  border-bottom: none; 
+  color: #695138!important;
+  font-family: 'Roboto Slab', serif;
+}
+
+.card {
+  min-height: 100%;
+}
 
 /* icon about section */
 

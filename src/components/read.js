@@ -31,7 +31,6 @@ function Read() {
 
     return (
         <div>
-            <h2>Favourite Coffees</h2>
             <Coffees myCoffees={data} ReloadData={Reload}></Coffees>
         </div>
     );
