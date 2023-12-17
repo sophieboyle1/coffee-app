@@ -29,66 +29,69 @@ function Create() {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit} className="form-section">
-                <div className="row contact-form-text">
-                    <div className="form-group col-12 col-sm-6">
-                        <label htmlFor="coffee-name" className="contact-form-text">Coffee Name:</label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            id="coffee-name"
-                            value={name}
-                            onChange={(e) => { setName(e.target.value) }}
-                        />
-                    </div>
-                    <div className="form-group col-12 col-sm-6">
-                        <label htmlFor="coffee-image-url" className="contact-form-text">Coffee Image URL:</label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            id="coffee-image-url"
-                            value={imageUrl}
-                            onChange={(e) => { setImageUrl(e.target.value) }}
-                        />
-                    </div>
-                    <div className="form-group col-12">
-                        <label htmlFor="coffee-description" className="contact-form-text">Coffee Description:</label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            id="coffee-description"
-                            value={description}
-                            onChange={(e) => { setDescription(e.target.value) }}
-                        />
-                    </div>
-                    <div className="form-group col-12 col-sm-6">
-                        <label htmlFor="origin" className="contact-form-text">Origin:</label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            id="origin"
-                            value={origin}
-                            onChange={(e) => { setOrigin(e.target.value) }}
-                        />
-                    </div>
-                    <div className="form-group col-12 col-sm-6">
-                        <label htmlFor="roast" className="contact-form-text">Roast:</label>
-                        <input
-                            type="text"
-                            className="form-control"
-                            id="roast"
-                            value={roast}
-                            onChange={(e) => { setRoast(e.target.value) }}
-                        />
-                    </div>
-                    <div className="col-12">
-                        <button type="submit" className="btn btn-light float-right" id="contact-btn-form">Add Coffee</button>
-                    </div>
+        <div className="container">
+    <div className="row">
+        <form onSubmit={handleSubmit} className="custom-section form-section">
+            <div className="row contact-form-text">
+                <div className="col-12 col-sm-6">
+                    <label htmlFor="coffee-name" className="contact-form-text">Coffee Name:</label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="coffee-name"
+                        value={name}
+                        onChange={(e) => { setName(e.target.value) }}
+                    />
                 </div>
-            </form>
+                <div className="col-12 col-sm-6">
+                    <label htmlFor="coffee-image-url" className="contact-form-text">Coffee Image URL:</label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="coffee-image-url"
+                        value={imageUrl}
+                        onChange={(e) => { setImageUrl(e.target.value) }}
+                    />
+                </div>
+                <div className="col-12">
+                    <label htmlFor="coffee-description" className="contact-form-text">Coffee Description:</label>
+                    <textarea
+                        className="form-control"
+                        id="coffee-description"
+                        value={description}
+                        onChange={(e) => { setDescription(e.target.value) }}
+                        rows="3"
+                    />
+                </div>
+                <div className="col-12 col-sm-6">
+                    <label htmlFor="origin" className="contact-form-text">Origin:</label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="origin"
+                        value={origin}
+                        onChange={(e) => { setOrigin(e.target.value) }}
+                    />
+                </div>
+                <div className="col-12 col-sm-6">
+                    <label htmlFor="roast" className="contact-form-text">Roast:</label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="roast"
+                        value={roast}
+                        onChange={(e) => { setRoast(e.target.value) }}
+                    />
+                </div>
+                <div className="col-12">
+                    <button type="submit" className="btn btn-light float-right" id="contact-btn-form">Add Coffee</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 
-        </div>
+
     );
 }
 

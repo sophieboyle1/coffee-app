@@ -44,7 +44,7 @@ function App() {
           <Route path='/' element={<Content />} />
           <Route path='/read' element={<Read />} />
           <Route path='/create' element={<Create />} />
-          <Route path='/ontact' element={<Contact />} />
+          <Route path='/contact' element={<Contact />} />
           <Route path='/edit/:id' element={<Edit></Edit>}></Route>
         </Routes>
         <Footer />
