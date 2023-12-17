@@ -39,6 +39,12 @@ const coffeeSchema = new mongoose.Schema({
 
 const coffeeModel = mongoose.model('my_coffees', coffeeSchema);
 
+app.delete('/api/coffee/:id', async (req, res)=>{
+    console.log('Deleting: '+req.params.id);
+    let coffee = await coffeeModel.findByIdAndDelete({_id:req.params.id});
+    res.send(coffee);
+    })
+
 app.put('/api/coffee/:id', async(req, res)=>{
     console.log("Update: "+req.params.id);
   
