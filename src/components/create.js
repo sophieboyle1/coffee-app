@@ -7,11 +7,10 @@ function Create() {
     const [description, setDescription] = useState('');
     const [origin, setOrigin] = useState('');
     const [roast, setRoast] = useState('');
+    const [message, setMessage] = useState(''); // State for success message
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        console.log("name " + name);
 
         // Construct the coffee object from the state
         const newCoffee = {
@@ -21,11 +20,25 @@ function Create() {
             origin: origin,
             roast: roast
         };
+        
+        // reset coffee form 
+        const resetForm = () => {
+            setName('');
+            setImageUrl('');
+            setDescription('');
+            setOrigin('');
+            setRoast('');
+        };
 
         // Make a POST request to add the new coffee
         axios.post('http://localhost:4000/api/coffee', newCoffee)
-            .then()
-            .catch();
+        .then(() => {
+            resetForm(); // Reset form on successful POST
+            setMessage('Coffee successfully added!'); // Set success message
+        })
+        .catch((error) => {
+            setMessage('An error occurred: ' + error.message); // Set error message
+        });
     }
 
     return (
