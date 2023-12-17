@@ -56,3 +56,56 @@ h2::after {
 .nav-link:hover {
   font-weight: 700 !important;
 }
+
+/* footer */
+.footer {
+  line-height: 50px;
+  color: #fafafa;
+  min-height: 325px;
+  font-size: 15px;
+  background-color: #8f6f4d;
+}
+
+footer .fontawesome-icons {
+  color: #fafafa;
+  padding: 0 20px 0 0;
+}
+
+.address {
+  padding-left: 33px;
+  line-height: 20px;
+}
+
+footer .contact-number, footer .contact-email {
+  color: #fafafa;
+}
+
+#footer-email a:hover {
+  color: #fafafa;
+
+}
+
+.social-icon {
+  font-size: 40px;
+  padding: 15px 30px 0 0;
+  color: #fafafa;
+}
+
+.fa-facebook-square:hover, .fa-instagram:hover {
+  color: #fafafa;
+}
+
+.contact-footer {
+  line-height: 40px;
+  padding-top: 2rem;
+}
+
+.follow-us {
+  padding-top: 2rem;
+}
+
+.logo-footer {
+  padding: 25px 0 15px 0;
+  width: 200px;
+  filter: brightness(0) invert(1);
+}
