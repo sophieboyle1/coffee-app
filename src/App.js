@@ -13,7 +13,6 @@ import Edit from './components/edit';
 import Logo from './images/logo.png';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
-
 function App() {
   return (
     <BrowserRouter>
