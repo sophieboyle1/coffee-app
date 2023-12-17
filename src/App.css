@@ -162,6 +162,47 @@ h2::after {
   padding: 20px 0 5px 0;
 }
 
+/* All Forms */
+
+.form-section {
+  background-color: rgba(143, 111, 77, 0.3);
+}
+
+.contact-email, .contact-number {
+  padding: 0 10px 0 0;
+}
+
+.contact-form-text {
+  padding: 10px 0 10px 0;
+  font-weight: 500;
+}
+
+#contact-btn-form {
+  font-weight: 400;
+  font-family: 'Roboto Slab', serif;
+  color: #fafafa;
+  background-color: #8f6f4d;
+  height: 40px;
+  width: 120px;
+  font-size: 18px;
+  margin: 10px 0 0 0;
+} 
+
+#contact-btn-form:hover { 
+  background-color: #fafafa;
+  color: #8f6f4d;
+}
+
+.svg-inline--fa {
+  color: #8f6f4d;
+}
+
+iframe {
+  width: 100%; 
+  height: 350px;
+  border: none;
+}
+
 /* footer */
 .footer {
   line-height: 50px;
