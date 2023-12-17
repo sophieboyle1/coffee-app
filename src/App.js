@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Create from './components/create';
 import Read from './components/read';
 import Edit from './components/edit';
+import Contact from './components/contact';
 import Logo from './images/logo.png';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
@@ -34,6 +35,7 @@ function App() {
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/create">Add Coffee</Nav.Link>
                 <Nav.Link href="/read">Coffee</Nav.Link>
+                <Nav.Link href="/contact">Contact</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
@@ -42,6 +44,7 @@ function App() {
           <Route path='/' element={<Content />} />
           <Route path='/read' element={<Read />} />
           <Route path='/create' element={<Create />} />
+          <Route path='/ontact' element={<Contact />} />
           <Route path='/edit/:id' element={<Edit></Edit>}></Route>
         </Routes>
         <Footer />

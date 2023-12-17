@@ -30,7 +30,6 @@ function Create() {
 
     return (
         <div>
-            <h2>This is my Create Coffee Component.</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label>Coffee Name: </label>
