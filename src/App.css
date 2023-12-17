@@ -57,6 +57,111 @@ h2::after {
   font-weight: 700 !important;
 }
 
+/* hero section */
+
+.hero-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 450px;
+  position: relative;
+  left: 0;
+  right: 0;
+}
+
+.hero-text {
+  position: absolute;
+  top: 200px;
+  bottom: 165px;
+  left: 0;
+  right: 0;
+  padding: 0 10px 0 80px;
+  position: relative;
+  transform: translateY(-60px);
+}
+
+#hero-h1 {
+  letter-spacing: 5px;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  font-size: 40px;
+  color: #fafafa;
+}
+
+#hero-h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 25px;
+  line-height: 35px;
+  color: #fafafa;
+}
+
+#hero-button {
+  font-family: 'Roboto Slab', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  color: #fafafa;
+  background-color: #8f6f4d;
+  height: 55px;
+  width: 200px;
+}
+
+#hero-button:hover {
+  background-color: #fafafa;
+  color: #8f6f4d;
+}
+
+/* icon about section */
+
+.custom-section {
+  padding: 50px;
+  background-color: rgba(143, 111, 77, 0.05);
+}
+
+.white {
+  background-color: #fafafa;
+}
+
+.my-icon {
+  color: #fafafa;
+  background-color: #8f6f4d;
+  border-radius: 50%;
+  font-size: 50px;
+  padding: 30px;
+  margin-top: 50px;
+  height: 7rem;
+  width: 7rem;
+}
+
+.four-icons {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.zoom {
+  transition: transform .5s;
+  width: 20%;
+  height: 20%;
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(1.2);
+}
+
+/* beans points sections */
+
+.bean-points-parent {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+/* 4 pics about sections */
+
+.about-column img {
+  padding: 20px 0 5px 0;
+}
+
 /* footer */
 .footer {
   line-height: 50px;
