@@ -8,8 +8,8 @@ export default function Edit() {
     const [name, setName] = useState('');
     const [imageUrl, setImageUrl] = useState('');
     const [description, setDescription] = useState('');
-    const [origin, setOrigin] = useState(''); 
-    const [roast, setRoast] = useState(''); 
+    const [origin, setOrigin] = useState('');
+    const [roast, setRoast] = useState('');
 
     const navigate = useNavigate();
 
@@ -53,57 +53,69 @@ export default function Edit() {
                 });
     }
     return (
-        <div>
-            <h2>Hello from Edit component!</h2>
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label>Coffee Name: </label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        value={name}
-                        onChange={(e) => { setName(e.target.value) }}
-                    />
-                </div>
-                <div className="form-group">
-                    <label>Coffee Image URL: </label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        value={imageUrl}
-                        onChange={(e) => { setImageUrl(e.target.value) }}
-                    />
-                </div>
-                <div className="form-group">
-                    <label>Coffee Description: </label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        value={description}
-                        onChange={(e) => { setDescription(e.target.value) }}
-                    />
-                </div>
-                <div className="form-group">
-                    <label>Origin:</label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        value={origin}
-                        onChange={(e) => { setOrigin(e.target.value) }}
-                    />
-                </div>
-                <div className="form-group">
-                    <label>Roast:</label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        value={roast}
-                        onChange={(e) => { setRoast(e.target.value) }}
-                    />
-                </div>
-                <input type="submit" value="Add Coffee"></input>
-            </form>
-
+        <section className="custom-section form-section">
+        <div className="container">
+            <div className="row">
+                    <h2>Edit Coffee Details</h2>
+                    <form onSubmit={handleSubmit} className="contact-form-text">
+                        <div className="row">
+                            <div className="col-12 col-sm-6">
+                                <label htmlFor="coffee-name" className="form-label">Coffee Name:</label>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    id="coffee-name"
+                                    value={name}
+                                    onChange={(e) => { setName(e.target.value) }}
+                                />
+                            </div>
+                            <div className="col-12 col-sm-6">
+                                <label htmlFor="coffee-image-url" className="form-label">Coffee Image URL:</label>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    id="coffee-image-url"
+                                    value={imageUrl}
+                                    onChange={(e) => { setImageUrl(e.target.value) }}
+                                />
+                            </div>
+                            <div className="col-12">
+                                <label htmlFor="coffee-description" className="form-label">Coffee Description:</label>
+                                <textarea
+                                    className="form-control"
+                                    id="coffee-description"
+                                    value={description}
+                                    onChange={(e) => { setDescription(e.target.value) }}
+                                    rows="3"
+                                />
+                            </div>
+                            <div className="col-12 col-sm-6">
+                                <label htmlFor="origin" className="form-label">Origin:</label>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    id="origin"
+                                    value={origin}
+                                    onChange={(e) => { setOrigin(e.target.value) }}
+                                />
+                            </div>
+                            <div className="col-12 col-sm-6">
+                                <label htmlFor="roast" className="form-label">Roast:</label>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    id="roast"
+                                    value={roast}
+                                    onChange={(e) => { setRoast(e.target.value) }}
+                                />
+                            </div>
+                            <div className="col-12">
+                                <button type="submit" className="btn btn-light float-right" id="contact-btn-form">Update</button>
+                            </div>
+                        </div>
+                    </form>
+            </div>
         </div>
+        </section>
     );
 }
