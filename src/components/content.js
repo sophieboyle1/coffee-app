@@ -6,23 +6,23 @@ import coffeeShopImage1 from '../images/coffee-1.jpg';
 import coffeeShopImage2 from '../images/coffee-2.jpg';
 import coffeeShopImage3 from '../images/coffee-3.jpg';
 import coffeeShopImage4 from '../images/coffee-4.jpg';
+import { Link } from 'react-router-dom';
+
 
 function Content() {
     return (
         <div>
-            {/* Hero section with background image */}
             <section style={{ backgroundImage: `url(${heroImage})` }} className="hero-image container-fluid">
                 <div className="container">
                     <div className="row">
-                        {/* Text content within hero section */}
                         <div className="hero-text col-xs-12 col-sm-6 col-md-6 col-lg-4 offset-lg-1">
                             <h1 id="hero-h1">Mr.Bean</h1>
-                            {/* Placeholder for dynamic content or navigation */}
+                            {/* Coffee database holder */}
                             <div id="coffee-to-go-nav-link"></div>
                             <br />
                             <h2 id="hero-h2">Your Gateway to Coffee Excellence</h2>
                             <br />
-                            {/* Button leading to coffee products or another section */}
+                            {/* button for coffee */}
                             <Link to="/read" className="btn btn-light" id="hero-button">
                                 Check Our Coffee
                             </Link>
@@ -30,8 +30,6 @@ function Content() {
                     </div>
                 </div>
             </section>
-
-            {/* Section describing the 'Coffee to Go' service */}
             <div className="background-colour custom-section">
                 <section>
                     <div className="container">
@@ -39,74 +37,93 @@ function Content() {
                         <div className="row">
                             <div className="col-12 col-sm-6">
                                 <p>
-                                    Description of the 'Coffee to Go' service, highlighting new offerings and specials.
+                                    Experience the joy of coffee at Mr.Bean! We're thrilled to introduce our brand-new 'Coffee to Go' service in Cork. Discover our extensive selection of premium coffees, all prepared for takeaway. Don't miss out on our Christmas special Ginger Bread Latte!
                                 </p>
                             </div>
                             <div className="col-12 col-sm-6">
                                 <p>
-                                    Additional details about the service, focusing on the quality and craftsmanship of the coffee.
+                                    At Mr.Bean, our expert baristas carefully craft each takeaway coffee using the finest quality coffee beans. Rest assured, your to-go coffee will deliver the same delightful flavors as our in-store brews, ensuring a truly satisfying coffee experience on the move.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </section>
-
-                {/* Section showcasing key features or values of the coffee shop */}
+                {/* Start Four Icons section */}
                 <div>
                     <div className="container">
                         <div className="row">
-                            {/* Each column represents a feature or value with an icon and text */}
                             <div className="col-6 col-lg-3 four-icons zoom">
                                 <span className="fa fa-coffee my-icon" aria-hidden="true"></span>
-                                <p><strong>Sustainably Sourced<br />Coffee Beans</strong></p>
+                                <p>
+                                    <strong>Sustainably Sourced<br />Coffee Beans</strong>
+                                </p>
                             </div>
                             <div className="col-6 col-lg-3 four-icons zoom">
                                 <span className="fa fa-user my-icon" aria-hidden="true"></span>
-                                <p><strong>Artisanal<br />Brewing</strong></p>
+                                <p>
+                                    <strong>Artisanal<br />Brewing</strong>
+                                </p>
                             </div>
                             <div className="col-6 col-lg-3 four-icons zoom">
                                 <span className="fa-solid fa-wifi my-icon" aria-hidden="true"></span>
-                                <p><strong>WiFi and<br />Workspaces</strong></p>
+                                <p>
+                                    <strong>WiFi and<br />Workspaces</strong>
+                                </p>
                             </div>
                             <div className="col-6 col-lg-3 four-icons zoom">
                                 <span className="fa fa-map-marker my-icon" aria-hidden="true"></span>
-                                {/* Placeholder for dynamic content or navigation */}
+                                {/* Bean Points nav link */}
                                 <div id="bean-points-nav-link"></div>
-                                <p><strong>Community<br />Events</strong></p>
+                                <p>
+                                    <strong>Community<br />Events</strong>
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
+                {/* End background color box around 'Coffee to Go' and 'Four Icons' sections */}
             </div>
-
-            {/* Section for the Bean Rewards Program */}
             <div className="custom-section white">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-6">
-                            {/* Image of coffee beans */}
                             <img src={coffeeBeansImage} className="img-fluid" alt="Coffee beans" />
                         </div>
                         <div className="col-md-6">
-                            {/* Text content for Bean Rewards Program */}
                             <h2>Bean Rewards Program</h2>
-                            <p>Details about the rewards program and how customers can participate.</p>
+                            <p>
+                                At Mr. Bean, we value your loyalty, and our Bean Rewards Program is our way of saying thank you!
+                            </p>
+                            <p>
+                                For every coffee you enjoy with us, you'll earn 2 Bean Points. Once you've collected 12 Bean Points (equivalent to 6 coffees), you'll unlock a <strong>complimentary coffee</strong> of your choice. Getting started is simple:
+                            </p>
+                            <ol>
+                                <li>Request a Bean Rewards card during your next visit</li>
+                                <li>Receive a stamp on your card for every coffee purchase</li>
+                                <li>Witness your Bean Points accumulate</li>
+                                <li>Claim your free coffee once you've reached 12 points</li>
+                            </ol>
                         </div>
                     </div>
                 </div>
             </div>
-
-            {/* About section with images and text */}
             <div className="custom-section background-colour">
                 <div className="container">
                     <div className="row">
                         <article className="col-12 col-sm-6">
-                            {/* Text content describing the coffee shop */}
                             <h2>About</h2>
-                            <p>Introduction to Mr. Bean, focusing on the quality and experience of their coffee.</p>
+                            <p>
+                                Welcome to Mr. Bean, where coffee is an art and flavor is our masterpiece. Located in the heart of Cork, we're your destination for exceptional coffee experiences.
+                            </p>
+                            <p>
+                                Our baristas are true coffee artisans, and our coffee beans are handpicked for their quality and flavor profiles. Every cup we serve reflects our dedication to coffee perfection.
+                            </p>
+                            <p>
+                                Explore the world of coffee with us and discover your new favorite brew.
+                            </p>
+
                         </article>
                         <div className="col-6 col-sm-3 about-column">
-                            {/* Images related to the coffee shop */}
                             <img src={coffeeShopImage1} className="img-fluid" alt="Waiter holding coffee in hands" />
                             <img src={coffeeShopImage2} className="img-fluid" alt="Coffee and pastries on wooden table" />
                         </div>
