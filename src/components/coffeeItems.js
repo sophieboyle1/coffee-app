@@ -10,13 +10,13 @@ function CoffeeItems(props) {
     const handleDelete = () => {
         axios.delete('http://localhost:4000/api/coffee/' + _id)
             .then((res) => {
-                // Call the ReloadData function from props
-                props.ReloadData();
+                props.onDelete(_id);  // Use onDelete instead of ReloadData
             })
             .catch((error) => {
                 console.log(error);
             });
     };
+    
 
     return (
         <section>
