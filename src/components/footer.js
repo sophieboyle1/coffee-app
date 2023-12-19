@@ -7,6 +7,7 @@ function Footer() {
         <footer className="footer custom-section">
             <div className="container">
                 <div className="row">
+                    {/* Contact Information */}
                     <div className="col-12 col-md-6 contact-footer">
                         <h5>Contact:</h5>
                         <span className="fa fa-phone fontawesome-icons" aria-hidden="true"></span>
@@ -27,6 +28,8 @@ function Footer() {
                             Cork
                         </div>
                     </div>
+                    
+                    {/* Social Media and Logo */}
                     <div className="col-12 col-md-6 follow-us">
                         <h5>Follow us:</h5>
                         <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">

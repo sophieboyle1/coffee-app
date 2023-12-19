@@ -18,6 +18,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
+        {/* Navbar */}
         <Navbar bg="light" variant="light" expand="lg" className="px-3">
           <Container>
             <Navbar.Brand href="/">
@@ -32,6 +33,7 @@ function App() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ms-auto">
+                {/* Navigation Links */}
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/create">Add Coffee</Nav.Link>
                 <Nav.Link href="/read">Coffee</Nav.Link>
@@ -40,6 +42,8 @@ function App() {
             </Navbar.Collapse>
           </Container>
         </Navbar>
+
+        {/* Define Routes */}
         <Routes>
           <Route path='/' element={<Content />} />
           <Route path='/read' element={<Read />} />
@@ -47,6 +51,8 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/edit/:id' element={<Edit></Edit>}></Route>
         </Routes>
+
+        {/* Footer */}
         <Footer />
       </div>
     </BrowserRouter>
